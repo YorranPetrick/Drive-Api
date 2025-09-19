@@ -1,7 +1,6 @@
 package com.yp.DriveApi.models.exceptions;
 
 import lombok.Getter;
-import org.springframework.http.ResponseEntity;
 
 @Getter
 public class ResponseExceptions {

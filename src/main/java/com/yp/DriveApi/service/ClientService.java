@@ -3,6 +3,7 @@ package com.yp.DriveApi.service;
 import com.yp.DriveApi.models.clients.Client;
 import com.yp.DriveApi.models.exceptions.ResponseExceptions;
 import com.yp.DriveApi.repository.ClientRepository;
+import com.yp.DriveApi.security.spring.SpringSecurityConfig;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +17,7 @@ public class ClientService{
 
     public ResponseExceptions registrationClient(Client client) {
         try {
+            client.setPassword(SpringSecurityConfig.passwordEncoder().encode(client.getPassword()));
             clientRepository.save(client);
             return new ResponseExceptions("Client registered successfully", true);
         }catch (RuntimeException e){

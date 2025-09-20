@@ -1,4 +1,4 @@
-package com.yp.DriveApi.controller;
+package com.yp.DriveApi.controller.client;
 
 import com.yp.DriveApi.models.clients.Client;
 import com.yp.DriveApi.models.exceptions.ResponseExceptions;

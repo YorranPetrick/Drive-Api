@@ -1,7 +1,7 @@
 package com.yp.DriveApi.security.filter;
 
 import com.yp.DriveApi.security.token.TokenJwt;
-import com.yp.DriveApi.service.ClientServiceDetails;
+import com.yp.DriveApi.service.client.ClientServiceDetails;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

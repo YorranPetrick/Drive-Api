@@ -2,7 +2,7 @@ package com.yp.DriveApi.controller.client;
 
 import com.yp.DriveApi.models.clients.Client;
 import com.yp.DriveApi.models.exceptions.ResponseExceptions;
-import com.yp.DriveApi.service.ClientService;
+import com.yp.DriveApi.service.client.ClientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

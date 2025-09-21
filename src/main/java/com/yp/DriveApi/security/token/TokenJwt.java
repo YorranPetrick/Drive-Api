@@ -3,7 +3,7 @@ package com.yp.DriveApi.security.token;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.yp.DriveApi.models.clients.Client;
+import com.yp.DriveApi.models.clients.ClientDetails;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +40,7 @@ public class TokenJwt {
         }
     }
 
-    public String createTokenJwt(Client client){
+    public String createTokenJwt(ClientDetails client){
         try {
             var algorithm = Algorithm.RSA256(publicKey, privateKey);
 

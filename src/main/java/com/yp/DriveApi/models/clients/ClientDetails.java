@@ -29,6 +29,10 @@ public class ClientDetails implements UserDetails {
         return client.getName();
     }
 
+    public String getEmail() {
+        return client.getEmail();
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;

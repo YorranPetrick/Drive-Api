@@ -2,6 +2,7 @@ package com.yp.DriveApi.controller.client;
 
 import com.yp.DriveApi.models.clients.ClientDetails;
 import com.yp.DriveApi.models.clients.ClientLoginDto;
+import com.yp.DriveApi.models.token.TokenDto;
 import com.yp.DriveApi.security.token.TokenJwt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,6 @@ public class ClientLoginController {
         var authentication = authenticationManager.authenticate(token);
 
         var tokenGenerated = tokenJwt.createTokenJwt((ClientDetails) authentication.getPrincipal());
-        return ResponseEntity.ok(tokenGenerated);
+        return ResponseEntity.ok(new TokenDto(tokenGenerated));
     }
 }

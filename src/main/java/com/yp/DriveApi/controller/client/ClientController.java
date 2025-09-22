@@ -1,8 +1,9 @@
 package com.yp.DriveApi.controller.client;
 
-import com.yp.DriveApi.models.clients.Client;
+import com.yp.DriveApi.models.clients.ClientRequestDto;
 import com.yp.DriveApi.models.exceptions.ResponseExceptions;
 import com.yp.DriveApi.service.client.ClientService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,7 @@ public class ClientController {
 
 
     @PostMapping
-    public ResponseEntity loginClient(@RequestBody Client client) {
+    public ResponseEntity createClient(@RequestBody @Valid ClientRequestDto client) {
         ResponseExceptions response = clientService.registrationClient(client);
         if (response.getSuccessful()){
             return ResponseEntity.ok(response.getMessage());

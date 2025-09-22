@@ -1,7 +1,9 @@
 package com.yp.DriveApi.models.clients;
 
+import jakarta.validation.constraints.NotBlank;
+
 public record ClientLoginDto(
-        String email,
-        String password
+        @NotBlank String email,
+        @NotBlank String password
 ) {
 }

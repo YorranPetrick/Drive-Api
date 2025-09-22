@@ -4,6 +4,7 @@ import com.yp.DriveApi.models.clients.ClientDetails;
 import com.yp.DriveApi.models.clients.ClientLoginDto;
 import com.yp.DriveApi.models.token.TokenDto;
 import com.yp.DriveApi.security.token.TokenJwt;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,7 +25,7 @@ public class ClientLoginController {
     private TokenJwt tokenJwt;
 
     @PostMapping
-    public ResponseEntity loginClient(@RequestBody ClientLoginDto clientLoginDto) {
+    public ResponseEntity loginClient(@RequestBody @Valid ClientLoginDto clientLoginDto) {
         var token = new UsernamePasswordAuthenticationToken(clientLoginDto.email(), clientLoginDto.password());
         var authentication = authenticationManager.authenticate(token);
 
